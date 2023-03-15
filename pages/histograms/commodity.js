@@ -20,7 +20,7 @@ export async function getStaticProps() {
   let histogramData = {};
 
   try {
-    histogramData = await getHistogram("commodityType");
+    histogramData = await getHistogram("commodity");
   } catch (error) {
     console.error(error);
   }

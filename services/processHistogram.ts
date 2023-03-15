@@ -46,7 +46,7 @@ const startHistogramProcessing = async (column: HistogramColumns ) => {
 
 const processFile = async (column: HistogramColumns ) => {
     const parser = fs
-      .createReadStream('./__mocks__/Projection2021.csv')
+      .createReadStream('./public/data/Projection2021.csv')
       .pipe(parse({ delimiter: ','}));
 
     parser.on('readable', function(){
