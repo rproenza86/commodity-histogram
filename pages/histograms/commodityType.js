@@ -17,7 +17,13 @@ export default function Post({ histogramData, histogramName }) {
 }
 
 export async function getStaticProps() {
-  const histogramData = await getHistogram('commodityType')
+  let histogramData = {};
+
+  try {
+    histogramData = await getHistogram('commodityType');
+  } catch (error) {
+    console.error(error);
+  }
 
   return {
     props: {

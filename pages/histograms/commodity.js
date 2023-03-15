@@ -11,13 +11,19 @@ export default function Post({ histogramData, histogramName }) {
         <title>{histogramName}</title>
       </Head>
       <h3>{histogramName}</h3>
-      <HistogramTable histogramData={histogramData}/>
+      <HistogramTable histogramData={histogramData} />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const histogramData = await getHistogram("commodity");
+  let histogramData = {};
+
+  try {
+    histogramData = await getHistogram("commodityType");
+  } catch (error) {
+    console.error(error);
+  }
 
   return {
     props: {
