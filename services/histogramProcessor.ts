@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import { parse } from 'csv-parse';
 import { finished } from 'stream/promises';
 
@@ -32,15 +33,16 @@ const processHistogramRecord = (
 /**
  * Processes a histogram file and returns the results as a map.
  * @param column The column to count values for.
- * @param filePath The path to the histogram file.
+ * @param fileName The path to the histogram file.
  * @returns A map containing the histogram results.
  */
 const processHistogramFile = async (
   column: HistogramColumns,
-  filePath: string
+  fileName: string
 ): Promise<Map<string, number>> => {
   const histogramResults = new Map<string, number>();
-  const parser = fs.createReadStream(filePath).pipe(parse({ delimiter: ',' }));
+  const fileDirectory = path.join(process.cwd(), 'data');
+  const parser = fs.createReadStream(fileDirectory + fileName).pipe(parse({ delimiter: ',' }));
 
   parser.on('readable', () => {
     let record;
@@ -65,10 +67,7 @@ const startHistogramProcessing = async (
 ): Promise<{}> => {
   try {
     const result = {}
-    const _filePath =
-      process.env.NEXT_ENV === 'dev'
-        ? '/data/Projection2021.csv'
-        : './public/data/Projection2021.csv';
+    const _filePath = '/Projection2021.csv';
 
     const histogramResults = await processHistogramFile(column, filePath || _filePath);
 
