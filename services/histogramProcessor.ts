@@ -67,7 +67,7 @@ const startHistogramProcessing = async (
     const result = {}
     const _filePath =
       process.env.NEXT_ENV === 'dev'
-        ? './data/Projection2021.csv'
+        ? '/data/Projection2021.csv'
         : './public/data/Projection2021.csv';
 
     const histogramResults = await processHistogramFile(column, filePath || _filePath);
