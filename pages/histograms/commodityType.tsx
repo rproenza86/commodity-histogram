@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { GetServerSideProps } from "next";
 
 import Layout from "../../components/layout";
 import { getHistogram } from "../../services/histogram";
@@ -16,7 +17,7 @@ export default function CommodityType({ histogramData, histogramName }) {
   );
 }
 
-export async function getStaticProps() {
+export const getServerSideProps:GetServerSideProps = async () => {
   let histogramData = {};
 
   try {
@@ -31,4 +32,4 @@ export async function getStaticProps() {
       histogramName: 'Commodity Type Histogram'
     }
   }
-}
+};
