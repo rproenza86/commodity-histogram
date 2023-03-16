@@ -31,6 +31,12 @@
 
 ## Setup
 
+Create `.env` file and add the next content to run the app locally
+
+```
+API_URL=http://localhost:3000
+```
+
 ```bash
 $ npm i
 $ npm run dev 
