@@ -2,11 +2,11 @@ import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 
 // components to test
-import Commodity from "../commodity";
+import Commodity from "../../pages/histograms/commodity";
 
 describe("The Commodity page", () => {
     beforeAll(() => {
-        jest.mock("../../../services/histogram", () => ({
+        jest.mock("../../services/histogram", () => ({
             getHistogram: jest.fn(() => Promise.resolve({})),
         }));       
     });
