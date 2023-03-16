@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "NEXT_PUBLIC_API_URL=http://localhost:3000/ next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest --watch"

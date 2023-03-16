@@ -18,6 +18,10 @@
 
 ![app demo screenshot](docs/screenshots/demo.gif)
 
+### Unit test
+
+![app demo screenshot](docs/screenshots/testing.png)
+
 ## Features/Technical highlights
 
 -   Hosting : Vercel
@@ -30,3 +34,11 @@
 ```bash
 $ npm i
 $ npm run dev 
+```
+
+## Testing
+
+```bash
+$ npm i
+$ npm run test 
+```
