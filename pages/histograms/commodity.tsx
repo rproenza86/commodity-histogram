@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import { getHistogram } from "../../services/histogram";
 import HistogramTable from "../../components/histogramTable";
 
-export default function Post({ histogramData, histogramName }) {
+export default function Commodity({ histogramData, histogramName }) {
   return (
     <Layout>
       <Head>

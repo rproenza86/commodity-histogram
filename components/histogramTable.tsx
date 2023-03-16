@@ -23,6 +23,7 @@ export default function HistogramTable({ histogramData }) {
         height: "auto",
         minWidth: "100%",
       }}
+      data-testid="histogram-table"
     >
       <Table.Header>
         <Table.Column>NAME</Table.Column>
